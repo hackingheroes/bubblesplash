@@ -1,0 +1,918 @@
+﻿
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Handlee', cursive;
+}
+body, a, button, a:hover {cursor: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAIf0lEQVRYhe1Wa1BU5xl+jQi7mCBegqILctVIgEAgLiDB9ZpgTJPQOQaX297O2WqSTjtt7LQzbTeZSTLTxiFmyDDUIArbEXdgDTqxkBAvILjLnrOSRGsbjcYQJQZZWM7u2eWsM09/LCZDSGycdjr9kXfm/DnfN8/zvO/7vReiH+3/0aCxRNzxnLEpsabjvu880w3o7p6Qsc0Gx8+Z+uYREYHjE1Flj0NNXyq4o9EwOB+CQXjxjjhs/1YiIpjPPHn3AhibEhwfDY0lArrDSShrV+HZ7kfADuTA5MiG2V0IvbAeRlc5NLZ7iYhAlnum4ZRaY6CxRKC6dwUY271ghW13E4F5qO5eiCpnMpjONGh7VoPj1dAJBdAJBTC7C8HxiShrV6HG8Qdf0uHtcmJbjZxk18uJbTWgN6OIiKA/+xSqe1dA35VARAQTv+OHCLgfBlcKmM40MJ1pKGtXQduzGtqe1dAJBeD4Yuj7i7DJvXRy19k/BpmTO27ldDwxpmrShGJta4OL2zfeWmh7Rk5sq5ET22qmYbMD2wDMgr7vKRiE5+4shCz3wOBKgdG9HKYTGnB8MQyujeB4LczuDb6e63/z91x702c7r500nVolkVV1Tbk7IaBsThyKakqXYw/m3lId2iIn2fVg3p+HNR33geNfg9FRTkQEbe/87yc3ugxY03EfDK4UaHvnw+TYApNjC/R9T/nf+6JDvOT5MHB94rx/aKLN6xjeOf4rR15wXkPqUFRT+lBUU3qQ9qVcU+5OkMiqkhYeVAdS7BXQO9eDO/MKGNv94Hg1GJvy+wWUWmNQao2BSchDpWslOJ4BxzNghW2+TzyC/6Z/SPJIV/yXve94Tw69MKHvL5oka4YvsinLF9mUNUkNDwSpIXWIDizzL2+ID2W+UyTnHNGBsS0Ax+8AKzyGUmsMmPADnk7O8VlfCzDzTdD3F0HbsxqswPqcNzolT+Cif9Q/JF2b6PEODu/2/uVcuaQ+UiBTw8PeaOsjcvT+PF/kgeyJqMaVwbzDqeKr3Rke2z+Lgxbn85PPOxmYHNko70qA0ZWJGtdPv+sRLoCuNha62lhwfCI4XgDHMzC7N/gvjPZNeAMXpBtSn3j+5h5/20XDuL5rvaQ6qJbmWAtCypYiaY61QKb63OEldQ/6f96bd+P4Z2XSxdFfih/ffCNgvVSPanchOOeusLOD66Y4Z38joLp7IXS1sdD2zofRvTz8CB3ZYN2vSpe8p8UvxffEy949vsOXK8d+8b5GUrWpQ8rGwhDVlYSoeW1I2VwsR+/Pk/OOPux5/aPS0XPDL/lH/O9Io9JpcXCkGxw/B0/Xxt7mmhkBtnfF7fYa7gGOdDCdaVLn1Vb/BU/HxMXxV0aPX97m1X6wWr6/LVeK2acOUfNan8K6waewbghRXclIdHO+tPldta/l0+3Spx6rNBa4KIril74hcTBcASfXgePjwfFPgOOZb1VAfy44Ph4mx2IYXZkwujKhdaQH7Fca/f3X673Oke3XLe78yfjWVTLV54aULUU+hXVDcK51czCiZVOImteORDfnj5YeKfC1f6aVroqt0ljgyvi46BE/Fz9GBZ8F8+lnwQwuIyJCWbsKZe2q6SLMjkrouxLAfLAMlcdXwuzOl/acey3w9oXfTjReKAzmHU6dpNpVI9HN+SGqKwlGtGwKzm1+LCygrkSmhoflhzpyJw7+4yf+K+P1ojd4ThTFL8Wrno+IiFDJx6P0zSgQzQLRLJRaY2amosa5C5vcS8HxT2P78bVghceCz/Xt8Bi7MgPxf10+SdYMb7T1kRDVlQQV+zYGI1o2jSv2rg8pm4vluW/lTC6xZQTe+HvJ2IWRl6RR6bR/TLrivzjiQpUzGSz/BvRnasIp7p0PnfAimPOR35BrXSlgbAvC8+DDZBic1ajsiZcLjrHyg7Yciayqm9TwwO0UjCnqNWOKA+tC1PSoNGef2hNZnxmMa0299ntXrveTr17weXxHfTd8g1LfcDc4/irM/Fsw8Z+Bc/4JjC1ypvccHw2TYzGYD5ah7JgKGtu92OFKCaR0VATj7Y+PK/YmB6kh1RNZnylH788LKRsLwyW4Ty1Tfe5EVOPKwPzmRI/lw0z/pXFWGpYOTZz3nPoaX/fuEtSES5GICESzpgvQ9s6H1pEOoysTBtdGlFpjbpemnNSuCy21FY8r9iYPRTWleyLrM+W5b+XIVJ/rizyQPUnNq8YVe5MlsqpuHPg423tueKc4+NVB6eQXh6ZxlLvzZ3j+rShkgRUqpoZIPDbb48Dx8aj681w5ya4XF7VoJqIaVwYV+1KC1JIWngENqQF6ffnnixqXXivpShirPasZO3Tp5YDt07dn4FcdSb6jgK8vVncvhNGVCZ1QAOZYBqp4NcxnnpQT2gy34mzPhOJaiiapdVWQWtKuxL6WNKyoTRIX2DLGNx9bH9zZu9P70kcvY8u7y2fgak+u+/fkt7ejanchOH4zWGErWKECRqEF+rNFsFgi5IQ2g5zcXnUr0c7cUrWWiclt2+QV9mq54BgLolmo6sokIsKTRxeBLPdMLTzqH+Y9x0ejunshOP4BmE5owLp/hurTiTC6cmFwGlFxKgtV9jhU/Xou8hrmQGOJgMYSAcY2GxpLxFT6alBxZs0PIpxGbnLVg2gWmGMZU6ALUGWPg8GVAo5Xwyi0ghV0MPDF4PgsaE+lQzewJDzILAowNiV2HF8JtvcZIiJscc9Iw50FEDObaKonmBzZ2O5YDIPzIXBHF0F7Kh0aSwTMvB0G4XfgeC04fjPKT+RD60gHxyeCHcgB59yF8hP5REQoDe+Jdyei0vnojH9MZxpYgSUigtFtACf0Q39mD1j+NzA4q8EKW6EbeBx6vmYm4n9o3+5atxsIzGfdMLnPwTRQB9PZTf914h/tf2X/Av0vIZ17OewiAAAAAElFTkSuQmCC) 10 9, default;}
+
+body{
+    background-attachment: fixed;
+    max-width: 100%;
+}
+
+.intro{
+
+
+}
+#temp_menu li a:link,li a:visited {
+    color: white;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+}
+#temp_menu {
+	clear:both;
+    width: 100%;
+    overflow:hidden;
+    max-width: 100%;
+ position: fixed;
+  top: 0;
+}
+#temp_menu ul {
+    background: #2d0c23;
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+    text-align: left;
+    height: 70px;
+    max-width: 100%;
+}
+#temp_menu li {
+    display: inlie;
+    margin: 0;
+    max-width: 100%;
+}
+
+#temp_menu li a {
+position:relative;
+    display: block;
+text-decoration: none;
+background: #2d0c23;
+    height: 70px;
+    padding: 30px 0px 0px 50px;
+    float: left;
+    width: 70px;
+    max-width: 100%;
+    -webkit-transform: perspective(1px) translateZ(0);
+    transform: perspective(1px) translateZ(0);
+    -webkit-transition-duration: 0.3s;
+    transition-duration: 0.3s;
+    -webkit-transition-property: transform;
+    transition-property: transform;
+}
+
+#temp_menu li button{
+	max-width: 100%;
+    -webkit-transform: perspective(1px) translateZ(0);
+    transform: perspective(1px) translateZ(0);
+    -webkit-transition-duration: 0.3s;
+    transition-duration: 0.3s;
+    -webkit-transition-property: transform;
+    transition-property: transform;}
+#temp_menu a span{
+    position:relative;
+    top:30%;
+}
+#temp_menu a:hover {
+    text-decoration: none;
+    -webkit-transform: scale(0.9);
+    transform: scale(0.9);
+}
+#temp_menu button:hover{
+    text-decoration: none;
+    -webkit-transform: scale(0.9);
+    transform: scale(0.9);
+}
+#temp_menu span{
+    text-align: center;
+}
+#temp_menu span img{
+    border-radius: 50%;
+    position: relative;
+    left: -23px;
+    top: -30px;
+    align-items: center;
+    width: 40px;
+}
+h1{
+font-size: 4em;
+padding: 10px;
+text-shadow: 1px 2px 2px white;
+color:  #404040;
+
+}
+h2{
+    font-size: 2.5em;
+        padding:15px;
+        max-width: 100%;
+        color: black;
+}
+
+li {
+    float: left;
+}
+li a {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+li a:hover {
+    box-shadow: : 4px 3px 6px pink;
+}
+
+
+.one{
+	margin: auto auto;
+	padding-top: 10em;
+	pdding-left: 10em;
+    max-width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    background: #2d0c23;
+}
+
+.one a{ background: #ef99b7;
+    border-radius: 100%;
+    margin: 4em 6em 6em 10em;
+    width: 20%;
+    height: 28em;
+	float:center;
+    display: flex;
+    max-width: 100%;
+    max-height: 100%;
+
+
+   }
+
+
+.one img {
+    max-width: 100%;
+    height: 100%;
+    border-radius: 100%;
+
+}
+
+
+.one a:hover{
+-webkit-transform: perspective(1px) translateZ(0);
+    transform: perspective(1px) translateZ(0);
+
+-webkit-transition-duration: 0.3s;
+    transition-duration: 0.3s;
+
+-webkit-transition-property: transform;
+    transition-property: transform;
+
+    -webkit-transform: scale(0.9);
+  transform: scale(0.9);
+  opacity: 0.9;
+}
+.about{
+    padding: 20px;
+    background: white;
+    display: flex;
+	width: 100%;
+
+}
+
+h3 p{
+	color:#2d0c23;
+}
+.about img{
+    height: 150px;
+
+}
+.about div{
+	margin-left: 2em;
+	margin-right: 2em;
+	padding: 2em;
+	width: 50%;
+	height: 100%;
+	float: center;
+
+  flex: wrap;
+}
+
+.leonor{
+	margin-top:32em;
+}
+
+.alexia{
+	margin-top: 6em;
+}
+
+.irena{
+	margin-top: 40em;
+}
+
+.julkas{
+	margin-top: 16em;
+}
+
+.iza{
+	margin-top:8em;
+}
+
+.kuba{
+	margin-top: 36em;
+}
+
+.julkam{
+	margin-top: 10em;
+}
+
+.search-form{
+    display: block;
+    max-width: 100%;
+}
+.profile img{
+    max-width: 100%;
+    height: 100%;
+    border-radius: 50%;
+}
+.profile {
+    width: 150px;
+    height: 150px;
+    background: #e0bfe6;
+    border-radius: 50%;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    padding: 5px;
+    max-width: 100%;
+}
+header .index{/*to jest header naszych stron*/
+    text-align: center;
+    background:  pink;
+    margin-left: 1em;
+    margin-right: 1em;
+    max-width: 100%;
+    padding-top: 0;
+}
+
+
+/*wyszukiwarka*/
+/*header input[name=search] {
+    width: 200px;
+    height: 50px;
+    box-sizing: border-box;
+    border: 2px solid #ccc;
+    border-radius: 4px;
+    font-size: 16px;
+    background-color: white;
+    background-image: url(img/lupa1.png);
+    background-position: 10px 10px;
+    background-repeat: no-repeat;
+    padding: 12px 20px 12px 40px;
+    -webkit-transition: width 0.4s ease-in-out;
+    transition: width 0.4s ease-in-out;
+    max-width: 100%;
+}
+header input[name=search]:focus {
+    width: 300px;
+    max-width: 100%;*/
+}
+
+
+
+
+/* Dropdown Button */
+.logo{
+    background: url(splash.png) no-repeat center;
+    height: 160px;
+    margin: 0 auto;
+
+}
+.login{
+    height: auto;
+    background: url(img/splash.png) no-repeat center ; /*repeat-x, repeat-y, no-repeat */
+    background-size:  80%;
+} /*logowanie*/
+.contact-form{
+    width: 700px;
+    max-width: 100%;
+    margin: 0 auto;
+    padding: 6em;
+    padding-top: 10em;
+}
+.contact-form input, .contact-form label{
+    display: block;
+    width: 100%;
+}
+.contact-form input{
+    height: 2.5em;
+    margin-bottom: 1em;
+    padding: 10px;
+    font-size: 1.2em;
+}
+.contact-form .btn{
+    width: 50%;
+    margin: 1em auto;
+    background: #ffcc00;
+    font-size: 1.4em;
+    border: 0;
+    color: white;
+    text-align: center;
+    cursor: pointer;
+}
+
+.aplikacja{/*rejestracja*/
+    width: 500px;
+    max-width: 100%;
+    margin: 0 auto;
+    padding: 5em;
+    padding-top: 2em;
+}
+.aplikacja input, .aplikacja label{
+    display: block;
+    width: 100%;
+}
+
+.aplikacja  .btn{
+width: 50%;
+height: 2em;
+margin: 1em auto;
+background: #ffcc00;
+font-size: 1.4em;
+border: 0;
+color: white;
+text-align: center;
+cursor: pointer;
+}
+.aplikacja input{
+height: 1.8em;
+margin-bottom: 1em;
+padding: 10px;
+font-size: 2em;
+}
+
+.aplikacja .btn{
+width: 50%;
+margin: 1em auto;
+background: #ffcc00;
+font-size: 1.4em;
+border: 0;
+color: white;
+text-align: center;
+cursor: pointer;
+}
+
+.register{ /*odnosi sie do wyglądu rejestracji */
+height: auto;
+background: url(img/splash.png) no-repeat center ; /*repeat-x, repeat-y, no-repeat */
+background-size:  90%;
+text-shadow: 5px 4px 6px white;
+font-style: bold;
+}
+
+
+
+/*input[name=search] {
+width: 130px;
+box-sizing: border-box;
+border: 2px solid #ccc;
+border-radius: 4px;
+font-size: 16px;
+background-color: white;
+background-image: url(img/lupa1.png);
+background-position: 10px 10px;
+background-repeat: no-repeat;
+padding: 12px 20px 12px 40px;
+-webkit-transition: width 0.4s ease-in-out;
+transition: width 0.4s ease-in-out;
+}*/
+
+/*input[name=search]:focus {
+width: 20%;
+}*/
+
+
+.welcome{
+text-align: center;
+padding: 200px;
+background: url(img/splash3123.png) #e6b3cc no-repeat center;
+background-size: auto 500px;
+/*height: 400px ;
+width: 500px;*/
+}
+
+
+
+/* Dropdown Button */
+.dropbtn {
+background: #4CAF50;
+color: white;
+padding: 16px;
+font-size: 16px;
+border: none;
+cursor: pointer;
+}
+
+/* The container <div> - needed to position the dropdown content */
+.dropdown {
+position: relative;
+display: inline-block;
+}
+
+/* Dropdown Content (Hidden by Default) */
+.dropdown-content {
+display: none;
+position: absolute;
+background-color: #f9f9f9;
+min-width: 160px;
+box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+z-index: 1;
+}
+
+/* Links inside the dropdown */
+.dropdown-content a {
+color: black;
+padding: 12px 16px;
+text-decoration: none;
+display: block;
+}
+
+/* Change color of dropdown links on hover */
+.dropdown-content a:hover {background-color: #f1f1f1}
+
+/* Show the dropdown menu on hover */
+.dropdown:hover .dropdown-content {
+display: block;
+}
+
+/* Change the background color of the dropdown button when the dropdown content is shown */
+.dropdown:hover .dropbtn {
+background-color: #3e8e41;
+}
+
+.list{
+   margin: 6em;
+
+
+
+}
+
+.makeup-list{
+
+text-align;
+font-size: 35px;
+list-style: none;
+display: flex;
+flex-wrap: wrap;
+}
+
+.makeup-list a {
+display: block;
+color: black;
+text-shadow: 3px 3px 4px hotpink;
+padding:100px;
+margin: auto auto;
+width: 400px;
+height: 350px;
+text-align: center;
+text-decoration: none;
+background-image: url("img/1-ban2.png");
+background-size:  cover;
+background-position: center;
+  max-width: 100%;
+      -webkit-transform: perspective(1px) translateZ(0);
+    transform: perspective(1px) translateZ(0);
+    -webkit-transition-duration: 0.3s;
+    transition-duration: 0.3s;
+    -webkit-transition-property: transform;
+    transition-property: transform;
+}
+
+.makeup-list a:hover {
+-webkit-transform: scale(0.9);
+  transform: scale(0.9);
+}
+
+.listowe h1{
+    font-size: 6em;
+    padding: 10px;
+    text-shadow: 3px 5px 4px hotpink;
+    max-width: 100%;
+}
+
+
+ .logo2{
+margin-top: 5em;
+height: auto;
+    width:100%;
+    max-width: 100%;
+    display: center;
+
+
+}
+.logoo{
+    height: auto;
+    width: 1500px;
+    max-width: 100%;
+}
+
+.message{
+    width:700px;
+    max-width: 100%;
+}
+
+/* Full-width input fields */
+input[type=text], input[type=password] {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display:block;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+}
+/* Set a style for all buttons */
+.logowanko {
+border-radius: 100%;
+    background: none;
+    border: none;
+    width: 100%;
+}
+.klikaj{
+    background-color: #c63bf9;
+   color: white;
+   padding: 14px 20px;
+   margin: 8px 0;
+   border: none;
+   cursor: pointer;
+   width: 100%;
+}
+
+
+/* Extra styles for the cancel button */
+.cancelbtn {
+    width: auto;
+    padding: 10px 18px;
+    background-color: #f44336;
+}
+
+/* Center the image and position the close button */
+.imgcontainer {
+    text-align: center;
+    margin: 24px 0 24px 0;
+    position: relative;
+}
+
+img.avatar {
+    width: 20%;
+    border-radius: 50%;
+}
+
+.container {
+    padding: 20px 80px;
+}
+
+span.password {
+    float: right;
+    padding-top: 16px;
+}
+/* The Modal (background) */
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+    padding-top: 60px;
+}
+
+/* Modal Content/Box */
+.modal-content {
+    background-color: #fefefe;
+    margin: 5px auto; /* 15% from the top and centered */
+    border: 1px solid #888;
+    width: 80%; /* Could be more or less, depending on screen size */
+}
+/* The Close Button */
+.close {
+    /* Position it in the top right corner outside of the modal */
+    position: absolute;
+    right: 25px;
+    top: 0;
+    color: #000;
+    font-size: 35px;
+    font-weight: bold;
+}
+/* Close button on hover */
+.close:hover,
+.close:focus {
+    color: red;
+    cursor: pointer;
+}
+/* Add Zoom Animation */
+.animate {
+    -webkit-animation: animatezoom 0.6s;
+    animation: animatezoom 0.6s
+}
+@-webkit-keyframes animatezoom {
+    from {-webkit-transform: scale(0)}
+    to {-webkit-transform: scale(1)}
+}
+@keyframes animatezoom {
+    from {transform: scale(0)}
+    to {transform: scale(1)}
+}
+/* Change styles for span and cancel button on extra small screens */
+@media screen and (max-width: 300px) {
+    span.password {
+       display: block;
+       float: none;
+    }
+    .cancelbtn {
+       width: 100%;
+    }
+
+.img-responsive{
+  height: 200px;
+  width: 200px;
+}
+
+}
+
+.wysylanko {
+    background: none;
+    border: none;
+    cursor: pointer;
+    width: 100%;
+}
+
+/* Extra styles for the cancel button */
+.cancelbtn {
+    width: auto;
+    padding: 10px 18px;
+    background-color: #f44336;
+}
+
+/* The Modal (background) */
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+    padding-top: 60px;
+}
+
+/* Modal Content/Box */
+.modal-content {
+    background-color: #fefefe;
+    margin: 5px auto; /* 15% from the top and centered */
+    border: 1px solid #888;
+    width: 80%; /* Could be more or less, depending on screen size */
+}
+/* The Close Button */
+
+#preloader {
+	position: fixed;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	background: rgba(0,0,0,0.7);
+  opacity: 50%;
+	z-index: fixed;
+}
+#preloader #image {
+	width: 120px;
+	height: 120px;
+	position: absolute;
+	left: 50%;
+	top: 50%;
+	background: url("img//load.svg") no-repeat center;
+	margin: -60px 0 0 -60px;
+}
+
+.textarea{
+  width: 100%;
+  max-width: 100%;
+}
+
+.forgot{
+  color: black;
+
+}
+.userowlista li{
+  list-style-type: decimal-leading-zero;
+   text-shadow: 0 0 3px #990099, 0 0 5px #cc66cc;
+margin-right: 35px;
+
+}
+.userowlista nav{
+margin-right: 15px;
+}
+.buttom_welcome {
+  font: bold 16px ;
+  text-decoration: none;
+  background-color: #EEEEEE;
+  color: #333333;
+  padding: 3px 6px 3px 6px;
+  border-top: 2px solid #CCCCCC;
+  border-right: 2px solid #333333;
+  border-bottom: 2px solid #333333;
+  border-left: 2px solid #CCCCCC;
+}
+.upload article {
+padding: 15px;
+font-size: 20px;
+
+margin: 0 auto;
+height: 600px;
+width: 100%;
+}
+.upload input {
+height: 20px;
+width: 30px;
+color: black;
+margin: 0 auto;
+padding: 10px;
+display: inline-block;
+
+}
+
+
+ h4{ /*specialnie dla listy artykułów*/
+
+    	width: 100%;
+    	font-size: 60px;
+    	display: center;
+    	color: white;
+	padding: 1.5em;
+	text-shadow: 2px 2px 3px white;
+    	text-align: center;
+	background-image: url("img/banaa.png") ;
+ 	background-repeat: no-repeat;
+	background-size: auto 290px;
+	background-position: center top;
+	}
+.ar{
+
+	margin: auto auto;
+	width: 80%
+}
+
+.artykul{
+    padding: 30px;
+    height: 80%;
+    max-width: 100%;
+
+
+    }
+.artykul img{
+	padding: 5em
+    margin: 0 auto;
+    max-width: 600px;
+}
+.artykul div{
+    font-size: 25px;
+
+}
+
+.ff{
+
+
+	margin: 3em auto 4em auto;
+	border-radius: 4em;
+	width: 50%;
+}
+
+
+@media screen and (max-width: 400px) {
+   .ff{
+ width: 300px;
+}
+h4{
+	height: 290px;
+	font-size: 45px;
+}
+
+.artykul{
+	padding-top:0;
+
+}
+
+.list{
+	margin: auto auto;
+}
+.makeup-list a{
+	margin: 25px;
+	width: 320px;
+	background-size: auto 285px;
+	background-repeat: no-repeat;
+	background-position: center;
+
+
+}
+
+
+
+    }
+
+.avv{
+	border-radius:100%;
+	border: solid red 3px;
+}
+@media screen  and (max-width: 400px) {
+.one{
+	padding: 0;
+
+    margin-top:0px;
+    max-width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    background: #2d0c23;
+}
+.one a{
+
+
+	margin: 5em 4em 4em 4em;
+	width: 18em;
+	height: 18em;
+
+
+}
+
+.one img {
+
+
+}
+
+.one img:hover{
+  -webkit-transform: scale(0.9);
+  transform: scale(0.9);
+}
+
+.about{
+    padding: 20px;
+    background: white;
+    display: inline;
+	width: 100%;
+
+}
+.about img{
+    height: 150px;
+
+}
+.about div{
+	margin-left: 1em;
+	margin-right: 1em;
+	padding: 1em;
+	width: 50%;
+	height: 100%;
+
+}
+
+.leonor{
+	margin-top: 8em;
+	float: left;
+}
+
+.alexia{
+	margin-top: 6em;
+	float: right;
+}
+
+.irena{
+	margin-top: 6em;
+	float: left;
+}
+
+.julkas{
+	margin-top: 6em;
+	float: right;
+}
+
+.iza{
+	margin-top:6em;
+	float: left;
+}
+
+.kuba{
+	margin-top: 6em;
+	float: right;
+}
+
+.julkam{
+	margin-top: 6em;
+
+	float: left;
+}
+
+}
